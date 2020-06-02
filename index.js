@@ -1,4 +1,4 @@
-const numberOfFilms = prompt('How many movies have you seen?', 1);
+const numberOfFilms = +prompt('How many movies have you seen?', 1);
 alert(`You have seen ${numberOfFilms}`);
 
 const personalMovieDB = {
@@ -8,14 +8,30 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
+   
+    for (let i = 0; i < 2; i++) {
+        const lastMovie = prompt('Your last watched Movie?', ),
+        rate = prompt('Rate?', );
 
-const lastMovie1 = prompt('Your last watched Movie 1?', ),
-    rate1 = prompt('Rate 1?', ),
-    lastMovie2 = prompt('Your last watched Movie 2?', ),
-    rate2 = prompt('Rate 2?', );
+        if (lastMovie != null && rate != null && lastMovie != '' && rate != '' && lastMovie.length <50) {
+            personalMovieDB.movies[lastMovie] = rate;
+            console.log('done');       
+        } else {
+            console.log('error');
+            i--;
+        }
+        
+    }
+    
+    console.log(personalMovieDB);
 
-personalMovieDB.movies[lastMovie1] = rate1;
+    if (personalMovieDB.count < 10) {
+        console.log("Просмотрено довольно мало фильмов");
+    } else if (personalMovieDB.count >=10 && personalMovieDB < 30) {
+        console.log("Вы классический зритель");
+    } else if (personalMovieDB.count > 30) {
+        console.log("Вы киноман")
+    } else console.log('Mistake');
 
-personalMovieDB.movies[lastMovie2] = rate2;
 
-console.log(personalMovieDB);
+
